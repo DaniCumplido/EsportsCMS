@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/aos.css">
     <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Título de la página -->
     <title>Admin Dashboard | Eclipse Tournaments</title>
@@ -51,9 +52,9 @@
                         <h1 class="mb-0 h2 fw-bold">Dashboard</h1>
                     </div>
                     <div class="d-flex">
-                        <a href="#" class="btn btn-outline-primary me-3"><i class="fa-solid fa-pen"></i> Administrar
+                        <a href="#" class="btn btn-oro-outline me-3"><i class="fa-solid fa-pen"></i> Administrar
                             Competiciones</a>
-                        <a href="#" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Crear Competición</a>
+                        <a href="createCompeticion.html" class="btn btn-oro"><i class="fa-solid fa-plus"></i> Crear Competición</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +71,7 @@
                                 <span class="fs-6 text-uppercase fw-semibold ls-md">Usuarios</span>
                             </div>
                             <div>
-                                <span class="fa-solid fa-user-large fs-5 text-primary"></span>
+                                <span class="fa-solid fa-user-large fs-5 text-oro"></span>
                             </div>
                         </div>
                         <h2 class="fw-bold mb-1">1204</h2>
@@ -91,7 +92,7 @@
                                 <span class="fs-6 text-uppercase fw-semibold ls-md">Equipos</span>
                             </div>
                             <div>
-                                <span class="fa-solid fa-user-group fs-5 text-primary"></span>
+                                <span class="fa-solid fa-user-group fs-5 text-oro"></span>
                             </div>
                         </div>
                         <h2 class="fw-bold mb-1">346</h2>
@@ -112,7 +113,7 @@
                                 <span class="fs-6 text-uppercase fw-semibold ls-md">Competiciones</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-trophy fs-5 text-primary"></i>
+                                <i class="fa-solid fa-trophy fs-5 text-oro"></i>
                             </div>
                         </div>
                         <h2 class="fw-bold mb-1">21</h2>
@@ -133,7 +134,7 @@
                                 <span class="fs-6 text-uppercase fw-semibold ls-md">Partidos</span>
                             </div>
                             <div>
-                                <span class="fa-solid fa-medal fs-5 text-primary"></span>
+                                <span class="fa-solid fa-medal fs-5 text-oro"></span>
                             </div>
                         </div>
                         <h2 class="fw-bold mb-1">203</h2>
@@ -155,7 +156,7 @@
                     <div
                         class="card-header align-items-center card-header-height d-flex justify-content-between align-items-center">
                         <div>
-                            <h4 class="mb-0">Earnings</h4>
+                            <h4 class="mb-0">User Statistics</h4>
                         </div>
                         <div>
                             <div class="dropdown dropstart">
@@ -183,10 +184,12 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
-                        <!-- Earning chart -->
+                        <!-- Chart -->
+                        <canvas id="userChart"></canvas>
                     </div>
                 </div>
             </div>
+            <!-- Otro -->
             <div class="col-xl-4 col-lg-12 col-md-12 col-12">
                 <!-- Card -->
                 <div class="card mb-4">
@@ -194,7 +197,7 @@
                     <div
                         class="card-header align-items-center card-header-height d-flex justify-content-between align-items-center">
                         <div>
-                            <h4 class="mb-0">Traffic</h4>
+                            <h4 class="mb-0">Tournament Registrations</h4>
                         </div>
                         <div>
                             <div class="dropdown dropstart">
@@ -222,12 +225,87 @@
                     </div>
                     <!-- Card body -->
                     <div class="card-body">
+                        <!-- Chart -->
+                        <canvas id="registrationChart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        // Datos inventados para usuarios registrados por mes
+        const registeredUsersData = [100, 150, 220, 250, 280, 350, 420, 460, 500, 533, 600, 650];
+        // Datos inventados para usuarios que entran a la web por mes
+        const usersOnlineData = [50, 80, 100, 120, 150, 200, 220, 250, 280, 300, 350, 380];
+
+        // Configuración del gráfico
+        const ctx = document.getElementById('userChart').getContext('2d');
+        const userChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Registered Users',
+                    data: registeredUsersData,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }, {
+                    label: 'Users Online',
+                    data: usersOnlineData,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        // Datos inventados para la distribución de inscripciones por tipo de torneo
+        const tournamentTypes = ['Torneos', 'Ligas', 'Showmatch'];
+        const registrationsDistribution = [60, 30, 10]; // Porcentajes de inscripciones para cada tipo de torneo
+
+        // Configuración del gráfico
+        const ctx2 = document.getElementById('registrationChart').getContext('2d');
+        const registrationChart = new Chart(ctx2, {
+            type: 'doughnut', // Cambio del tipo de gráfico a radial
+            data: {
+                labels: tournamentTypes,
+                datasets: [{
+                    label: 'Tournament Registrations',
+                    data: registrationsDistribution,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/ca4ee4c5f8.js" crossorigin="anonymous"></script>

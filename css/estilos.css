@@ -1,23 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+    font-family: fuenteTexto;
+    src: url(../fuentes/DINNextW1G/dinnextw1g.otf);
+}
+
+@font-face {
+    font-family: fuenteTitulos;
+    src: url(../fuentes/Tungsten-Bold.ttf);
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'fuenteTexto', sans-serif;
     z-index: 555 !important;
 }
 
 /* VARIABLES DE COLORES */
 :root {
-    --oro: #ECC74C;
-    --oro-brillo: #ceab3a;
-    --naranja: #ec724c;
-    --naranja-brillo: #e24718;
-    --azul: #1b1f2c;
-    --gris: #b9b9b9;
-    --blanco: #f2f2f2;
-    --negro: #0e0e0e;
+    --azul: #1A1E2B;
+    --azul-brillo: #070605;
+    --oro: #FFCE4A;
+    --oro-brillo: #FFB94A;
+    --crema: #fff8e3;
+    --gris: #fff;
+}
+
+
+.titulo {
+    font-family: 'fuenteTitulos', sans-serif;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+
+.numeros {
+    font-family: 'fuenteTitulos', sans-serif;
+    text-transform: uppercase;
+    font-size: 118px;
+    letter-spacing: 0.03em;
 }
 
 .bg-azul {
