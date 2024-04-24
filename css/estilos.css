@@ -13,7 +13,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'fuenteTexto', sans-serif;
-    z-index: 555 !important;
 }
 
 /* VARIABLES DE COLORES */
@@ -25,7 +24,6 @@
     --crema: #fff8e3;
     --gris: #fff;
 }
-
 
 .titulo {
     font-family: 'fuenteTitulos', sans-serif;

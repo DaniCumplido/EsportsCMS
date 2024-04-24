@@ -714,8 +714,9 @@ progress {
   }
 }
 
+/* modificado */
 .list-unstyled {
-  padding-left: 0;
+  padding-left: 13px;
   list-style: none;
 }
 
