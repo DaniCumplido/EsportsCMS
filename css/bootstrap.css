@@ -8,6 +8,7 @@
 :root,
 [data-bs-theme=light] {
   --azul: #1A1E2B;
+  --azul-claro: #23293B;
   --azul-brillo: #070605;
   --oro: #FFCE4A;
   --oro-brillo: #FFB94A;
@@ -146,7 +147,7 @@
   --bs-secondary-bg-rgb: 52, 58, 64;
   --bs-tertiary-color: rgba(222, 226, 230, 0.5);
   --bs-tertiary-color-rgb: 222, 226, 230;
-  --bs-tertiary-bg: var(--azul);
+  --bs-tertiary-bg: var(--azul-claro);
   --bs-tertiary-bg-rgb: 43, 48, 53;
   --bs-primary-text-emphasis: #6ea8fe;
   --bs-secondary-text-emphasis: #a7acb1;
@@ -714,9 +715,8 @@ progress {
   }
 }
 
-/* modificado */
 .list-unstyled {
-  padding-left: 13px;
+  padding-left: 0px;
   list-style: none;
 }
 
@@ -2245,22 +2245,16 @@ progress {
 
 .table-blanca {
   --bs-table-color: var(--azul);
-  /* var(--azul) */
   --bs-table-bg: #f2f2f2;
-  /* #f2f2f2 */
   --bs-table-border-color: #d1d0d0;
   --bs-table-striped-bg: #e9f5ff;
   --bs-table-striped-color: #000;
   --bs-table-active-bg: #f2f2f2;
   --bs-table-active-color: var(--azul);
-  /* var(--azul) */
   --bs-table-hover-bg: #1c1f29;
   --bs-table-hover-color: var(--azul);
-  /* var(--azul) */
   color: var(--azul);
-  /* var(--azul) */
   border-color: #f2f2f2;
-  /* #f2f2f2 */
 }
 
 .table-azul {

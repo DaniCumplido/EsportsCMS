@@ -18,6 +18,7 @@
 /* VARIABLES DE COLORES */
 :root {
     --azul: #1A1E2B;
+    --azul-claro: #23293B;
     --azul-brillo: #070605;
     --oro: #FFCE4A;
     --oro-brillo: #FFB94A;
@@ -41,6 +42,11 @@
 .bg-azul {
     background-color: var(--azul);
     border: var(--azul);
+}
+
+.bg-azul-claro {
+    background-color: var(--azul-claro);
+    border: var(--azul-claroul);
 }
 
 /* CONFIGURACIÓN DE LOS TEXTOS */
@@ -117,7 +123,6 @@
 
 .imglogoeclipse {
     height: 55px;
-    /* width: 171px; */
 }
 
 /* The switch - the box around the slider */
@@ -144,7 +149,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #223243;
+    background-color: var(--azul);
     transition: .4s;
     border-radius: 30px;
 }
@@ -157,8 +162,8 @@
     border-radius: 20px;
     left: 0.3em;
     bottom: 0.3em;
-    background-color: #223243;
-    box-shadow: inset 2px -2px 0 1.8px #fff;
+    background-color: var(--azul);
+    box-shadow: inset 2px -2px 0 1.8px var(--gris);
     transition: .4s;
     animation: anima1 0.3s linear;
 }
@@ -178,7 +183,7 @@
 }
 
 .switch input:checked+.slider:before {
-    background-color: yellow;
+    background-color: var(--oro);
     box-shadow: none;
     transform: translateX(1.5em);
     animation: anima 0.3s linear;
@@ -195,5 +200,78 @@
 
     100% {
         transform: translateX(1.4em)
+    }
+}
+
+/* SIDEBAR */
+
+#db-wrapper {
+    display: flex;
+    overflow-x: hidden
+}
+
+.navbar-vertical {
+    background-color: var(--azul-claro);
+    bottom: 0;
+    display: block;
+    height: 100vh;
+    margin-left: -17rem;
+    max-width: 250px;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    transition: margin .25s ease-out;
+    width: 100%;
+}
+
+#page-content {
+    margin-left: 15.625rem
+}
+
+#page-content {
+    min-height: 100vh;
+    min-width: 100vw;
+    transition: margin .25s ease-out
+}
+
+#db-wrapper.toggled #page-content,
+#db-wrapper.toggled #page-content-for-mini,
+#db-wrapper.toggled .navbar-vertical,
+#db-wrapper.toggled .navbar-vertical-compact {
+    margin-left: 0
+}
+
+@media (max-width: 740px) {
+    #page-content {
+        margin-left: 0
+    }
+
+    #db-wrapper.toggled #page-content {
+        margin-left: 15.6875rem
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-vertical {
+        margin-left: 0;
+    }
+
+    #page-content {
+        min-width: 0;
+        width: 100%
+    }
+
+    #db-wrapper.toggled .navbar-vertical {
+        margin-left: -16rem
+    }
+}
+
+@media (min-width: 576px) and (max-width:767.98px) {
+    #page-content {
+        margin-left: 0
+    }
+
+    #db-wrapper.toggled #page-content {
+        margin-left: 15.6875rem
     }
 }
