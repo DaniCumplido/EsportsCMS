@@ -43,6 +43,11 @@
     letter-spacing: 0.03em;
 }
 
+.bg-oro {
+    background-color: var(--oro);
+    border: var(--oro);
+}
+
 .bg-azul {
     background-color: var(--azul);
     border: var(--azul);
