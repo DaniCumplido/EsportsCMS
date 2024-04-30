@@ -26,6 +26,10 @@
     --gris: #fff;
 }
 
+.title{
+    font-family: 'fuenteTexto', sans-serif;
+}
+
 .titulo {
     font-family: 'fuenteTitulos', sans-serif;
     text-transform: uppercase;
