@@ -531,7 +531,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 col-xl-4 col-12">
-                        <!-- card  -->
+                        <!-- contaodr  -->
                         <div class="card mb-4 bg-oro">
                             <!-- card body  -->
                             <div class="card-body">
@@ -549,27 +549,20 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- card  -->
+                        <!-- stats partidos  -->
                         <div class="card mb-4">
                             <!-- card body  -->
                             <div class="card-body">
                                 <h4 class="card-title">Partidos jugados</h4>
-
                                 <div id="chart"></div>
-
                             </div>
                         </div>
-                        <div class="card">
-                            <!-- Card header -->
-                            <div
-                                class="card-header card-header-height d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4 class="mb-0">Recent Activity</h4>
-                                </div>
-                                <div><a href="#">View All</a></div>
-                            </div>
+                        <!-- stats genero -->
+                        <div class="card mb-4">
                             <!-- Card body -->
                             <div class="card-body">
+                                <h4 class="card-title">Generos</h4>
+                                <div id="chart2"></div>
                             </div>
                         </div>
                     </div>
@@ -935,6 +928,69 @@
             // Creación del gráfico de barras radiales
             const chart = new ApexCharts(document.querySelector("#chart"), options);
             chart.render();
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Datos de ejemplo: proporción de hombres, mujeres y otros géneros
+            const opcionesChart2 = {
+                series: [65, 30, 5], // Porcentajes de hombres, mujeres y otros
+                labels: ['Hombres', 'Mujeres', 'Otros'],
+                chart: {
+                    type: 'donut',
+                    height: 350,
+                },
+                colors: ['#00E396', '#00D9E9', '#DAF7A6'], // Cambiar colores
+                dataLabels: {
+                    enabled: true,
+                    formatter: function (val) {
+                        return val + "%";
+                    },
+                    style: {
+                        colors: ['#000'], // Color de letra de % en negro
+                    }
+                },
+                legend: {
+                    position: 'right', // Colocar la leyenda a la derecha
+                    horizontalAlign: 'right',
+                    fontSize: '16px', // Tamaño de fuente de la leyenda
+                    markers: {
+                        fillColors: ['#00E396', '#00D9E9', '#DAF7A6'], // Colores de las marcas
+                    },
+                    itemMargin: {
+                        vertical: 11, // Margen vertical entre los elementos de la leyenda
+                    },
+                    labels: {
+                        colors: '#fff', // Color de letra de la leyenda en blanco
+                    }
+                },
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }],
+                tooltip: {
+                    enabled: true, // Activar los tooltips
+                    y: {
+                        formatter: function (val) {
+                            return val + '%'; // Formato del tooltip para mostrar la cantidad de partidos
+                        }
+                    },
+                    style: {
+                        fontSize: '16px', // Tamaño de fuente del tooltip
+                        color: '#000', // Color del texto del tooltip (negro)
+                    }
+                }
+            };
+
+            // Crear el chart de ApexCharts
+            const chart2 = new ApexCharts(document.querySelector("#chart2"), opcionesChart2);
+            chart2.render();
         });
 
         document.addEventListener("DOMContentLoaded", function () {
