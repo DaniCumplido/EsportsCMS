@@ -14,7 +14,9 @@
 
     <!-- Librería Flatpickr para seleccionar fechas con selector en calendario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Librería Filepond para seleccionar archivos con animación -->
+    <!-- <link href="css/filepond.css" rel="stylesheet" /> -->
 
     <!-- Título de la página -->
     <title>Desafío Eclipse: Primera División | Eclipse Tournaments' CMS</title>
@@ -572,11 +574,243 @@
                         </div>
                     </div>
                 </div>
+                <!-- Tarjeta -->
+                <div class="card">
+                    <!-- Cuerpo de la tarjeta -->
+                    <div class="card-body p-lg-6">
+                        <!-- Formulario -->
+                        <form class="row gx-3 needs-validation" novalidate="">
+                            <div class="col-4">
+                                <!-- Sección de información básica -->
+                                <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Información</h1>
+                                </div>
+                                <!-- Campo para el nombre -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">
+                                        Nombre
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="Introduce un nombre"
+                                        required="">
+                                    <div class="invalid-feedback">Please enter first title.</div>
+                                </div>
+                                <!-- Campo para la descripción -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Descripción</label>
+                                    <textarea class="form-control" placeholder="Introduce una breve descripción..."
+                                        rows="3" required=""></textarea>
+                                    <div class="invalid-feedback">Please enter messages.</div>
+                                </div>
+                                <!-- Campo para el logo -->
+                                <!-- <input type="file" class="filepond" name="filepond" multiple data-max-file-size="3MB" data-max-files="3" /> -->
+                                <div class="mb-3 col-12">
+                                    <div>
+                                        <label class="form-label text-oro">Logo</label>
+                                        <div class="input-group mb-3">
+                                            <input type="file" class="form-control" id="logoInput">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Campo para la portada -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Portada</label>
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="portadaInput">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <!-- Sección de información del juego -->
+                                <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Formato</h1>
+                                </div>
+                                <!-- Campo para seleccionar el juego -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Juego
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-select" id="juego" required="">
+                                        <option value="">Selecciona el juego</option>
+                                        <option value="Valorant">Valorant</option>
+                                        <option value="League of Legends">League of Legends</option>
+                                        <option value="CS:GO">CS:GO</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para el premio de la competición -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Premio
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="exampleFormControlTextarea1"
+                                        placeholder="Introduce un premio" rows="3">
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para el número máximo de equipos -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Máximo de equipos
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="exampleFormControlTextarea2"
+                                        placeholder="Introduce un número" rows="3">
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para el número mínimo de miembros por equipo -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Miembros mínimos por equipo
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="exampleFormControlTextarea3"
+                                        placeholder="Introduce un número" rows="3">
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para el número de etapas -->
+                                <div class="mb-3 col-md-12 col-12">
+                                    <label class="form-label text-oro">Número de etapas
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="radioUnaEtapas" checked>
+                                        <label class="form-check-label" for="radioUnaEtapas">
+                                            Una etapa
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="radioDosEtapas">
+                                        <label class="form-check-label" for="radioDosEtapas">
+                                            Dos etapas
+                                        </label>
+                                    </div>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campos para el formato de las etapas -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro" for="primeraEtapa">Primera etapa
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-select" id="primeraEtapa" required="">
+                                        <option value="">Selecciona el formato</option>
+                                        <option value="Round Robin">Round Robin</option>
+                                        <option value="Single elimination">Single elimination</option>
+                                        <option value="Double elimination">Double elimination</option>
+                                        <option value="Swiss" disabled>Swiss</option>
+                                        <option value="Free-for-all" disabled>Free-for-all</option>
+                                        <option value="Leaderboard" disabled>Leaderboard</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro" for="segundaEtapa">Segunda etapa
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-select" id="segundaEtapa" required="" disabled>
+                                        <option value="">Selecciona el formato</option>
+                                        <option value="Round Robin">Round Robin</option>
+                                        <option value="Single elimination">Single elimination</option>
+                                        <option value="Double elimination">Double elimination</option>
+                                        <option value="Swiss" disabled>Swiss</option>
+                                        <option value="Free-for-all" disabled>Free-for-all</option>
+                                        <option value="Leaderboard" disabled>Leaderboard</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <!-- Sección de registro -->
+                                <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">inscripción</h1>
+                                </div>
+                                <!-- Campo para la cuota de inscripción -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Cuota de inscripción
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <select class="form-select" id="cuotaInscripcion" required="">
+                                        <option value="">Selecciona una cuota</option>
+                                        <option value="Gratuita">Gratuita</option>
+                                        <option value="Pago">Pago</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para el número mínimo de miembros por equipo -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">Precio de inscripción
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="number" class="form-control" id="precioInscripcion"
+                                        placeholder="Introduce un número" rows="3" disabled>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <!-- Campo para la fecha de cierre de inscripciones -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">
+                                        Fecha de cierre de inscripciones
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group me-3">
+                                        <input class="form-control flatpickr flatpickr-input" type="text"
+                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon2"
+                                            readonly="readonly">
+
+                                        <span class="input-group-text" id="basic-addon2"><i
+                                                class="bi bi-calendar-event"></i></span>
+                                    </div>
+                                </div>
+                                <!-- Campo para la fecha de inicio -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">
+                                        Fecha de inicio
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group me-3">
+                                        <input class="form-control flatpickr flatpickr-input" type="text"
+                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon3"
+                                            readonly="readonly">
+
+                                        <span class="input-group-text" id="basic-addon3"><i
+                                                class="bi bi-calendar-event"></i></span>
+                                    </div>
+                                </div>
+                                <!-- Campo para la fecha de finalización -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label text-oro">
+                                        Fecha de fin
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group me-3">
+                                        <input class="form-control flatpickr flatpickr-input" type="text"
+                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon3"
+                                            readonly="readonly">
+
+                                        <span class="input-group-text" id="basic-addon3"><i
+                                                class="bi bi-calendar-event"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botones de envío y cierre -->
+                            <div class="col-12">
+                                <button class="btn btn-oro" type="submit">Crear</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- <script src="js/filepond.js"></script> -->
     <script>
+        // Get a reference to the file input element
+        // const inputElement = document.querySelector('input[type="file"]');
+
+        // Create a FilePond instance
+        // const pond = FilePond.create(inputElement);
+
         // Fecha de finalización (15 de agosto)
         const fechaFinalizacion = new Date('2024-08-15T00:00:00');
 
@@ -703,9 +937,68 @@
             chart.render();
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+            var toggleBtn = document.getElementById('toggle-sidebar-btn');
+            var dbWrapper = document.getElementById('db-wrapper');
+
+            toggleBtn.addEventListener('click', function () {
+                dbWrapper.classList.toggle('toggled');
+            });
+        });
+
+        // Obtenemos los elementos relevantes del DOM
+        const radioUnaEtapa = document.getElementById('radioUnaEtapas');
+        const radioDosEtapas = document.getElementById('radioDosEtapas');
+        const selectSegundaEtapa = document.getElementById('segundaEtapa');
+
+        // Agregamos event listeners para el cambio en los radios de una etapa y dos etapas
+        radioUnaEtapa.addEventListener('change', updateSegundaEtapa);
+        radioDosEtapas.addEventListener('change', updateSegundaEtapa);
+
+        // Función para actualizar el estado del campo de selección de segunda etapa
+        function updateSegundaEtapa() {
+            // Si se selecciona dos etapas, habilitar el campo de selección de segunda etapa
+            if (radioDosEtapas.checked) {
+                selectSegundaEtapa.disabled = false;
+            } else {
+                // Si no se selecciona dos etapas, deshabilitarlo
+                selectSegundaEtapa.disabled = true;
+            }
+        }
+
+        // Obtenemos el campo de selección de cuota de inscripción
+        const selectCuotaInscripcion = document.getElementById('cuotaInscripcion');
+        const selectPrecioInscripcion = document.getElementById('precioInscripcion');
+
+        // Agregamos un event listener al cambio en la selección de cuota de inscripción
+        selectCuotaInscripcion.addEventListener('change', function () {
+            // Si se selecciona pago, habilitar el campo de precio de inscripción
+            if (selectCuotaInscripcion.value === 'Pago') {
+                selectPrecioInscripcion.disabled = false;
+            } else {
+                // Si no se selecciona pago, deshabilitarlo
+                selectPrecioInscripcion.disabled = true;
+            }
+        });
+
+        // Llamamos a la función para asegurarnos de que el campo de selección de segunda etapa esté en el estado correcto al cargar la página
+        updateSegundaEtapa();
+
+        // Esperamos a que el documento esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Configuramos Flatpickr para los campos de fecha
+            flatpickr('.flatpickr', {
+                // Opciones adicionales de configuración aquí
+                // Puedes personalizar el formato de fecha, el idioma, etc.
+                dateFormat: 'Y-m-d', // Formato de fecha YYYY-MM-DD
+                locale: 'es', // Idioma español
+                // Podemos añadir más opciones aquí según sea necesario
+            });
+        });
     </script>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://kit.fontawesome.com/ca4ee4c5f8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
