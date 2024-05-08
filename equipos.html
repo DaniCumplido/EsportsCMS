@@ -183,7 +183,7 @@
                         </select>
                     </div>
                 </div>
-                <!-- Tabla -->
+                <!-- Tabla equipos -->
                 <div class="row">
                     <!-- col -->
                     <div class="col-12">
@@ -195,10 +195,10 @@
                                     <thead class="">
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Equipos</th>
-                                            <th>Ult. Conexión</th>
-                                            <th>Ganancias</th>
-                                            <th class="ps-5">Estado</th>
+                                            <th>Capitán</th>
+                                            <th>Fecha de creación</th>
+                                            <th>Número de miembros</th>
+                                            <th>Estado</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -218,6 +218,58 @@
                                             <td class="align-middle">100€</td>
 
                                             <td class="align-middle ps-5">
+                                                <span class="badge text-bg-secondary">En espera</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="editarCompeticion.html" class="text-light"><i
+                                                        class="bi bi-pencil-square fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabla usuarios -->
+                <div class="row">
+                    <!-- col -->
+                    <div class="col-12">
+                        <!-- card -->
+                        <div class="card">
+                            <!-- table -->
+                            <div class="table-responsive overflow-y-hidden">
+                                <table class="table mb-0 text-nowrap table-hover table-centered">
+                                    <thead class="">
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Correo Electrónico</th>
+                                            <!-- El rol del usuario en la plataforma, como administrador, organizador de torneos, jugador, etc. -->
+                                            <th>Rol</th>
+                                            <th>Fecha de Registro</th>
+                                            <th>Última Conexión</th>
+                                            <!-- Indica si la cuenta del usuario está activa, suspendida, o pendiente de activación. -->
+                                            <th>Estado Cuenta</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="align-middle">
+                                                <p class="mb-0"><a href="#"
+                                                        class="text-light text-decoration-none fs-5">DaniTsu</a></p>
+                                            </td>
+
+                                            <td class="align-middle">danicumplido04@gmail.com</td>
+
+                                            <td class="align-middle">Administrador</td>
+
+                                            <td class="align-middle">23/01/2024</td>
+
+                                            <td class="align-middle">08/05/2024</td>
+
+                                            <td class="align-middle">
                                                 <span class="badge text-bg-secondary">En espera</span>
                                             </td>
 
