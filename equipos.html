@@ -156,7 +156,7 @@
                                     aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Competiciones</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Equipos</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -176,10 +176,10 @@
                         <!-- Custom select -->
                         <select class="form-select">
                             <option value="">Filtro</option>
-                            <option value="Borrador">Borrador</option>
-                            <option value="En Progreso">En Progreso</option>
-                            <option value="Terminada">Terminada</option>
-                            <option value="Cancelada">Cancelada</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                            <option value="En revisión">En revisión</option>
+                            <option value="Inhabilitado">Inhabilitado</option>
                         </select>
                     </div>
                 </div>
@@ -197,85 +197,284 @@
                                             <th>Nombre</th>
                                             <th>Capitán</th>
                                             <th>Fecha de creación</th>
-                                            <th>Número de miembros</th>
+                                            <th>Miembros</th>
+                                            <th>Partidos jugados</th>
                                             <th>Estado</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!-- Goats -->
                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoGoats.png" alt="logo Goats" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Goats</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">DaniTsu</td>
+
+                                            <td class="align-middle">20 Feb, 2024</td>
+
+                                            <td class="align-middle">5</td>
+
+                                            <td class="align-middle">20</td>
+
                                             <td class="align-middle">
-                                                <p class="mb-0"><a href="#"
-                                                        class="text-light text-decoration-none fs-5">DaniTsu</a></p>
+                                                <span class="badge text-bg-success">Activo</span>
                                             </td>
 
                                             <td class="align-middle">
-                                                <img alt="avatar" src="img/logoEclipseFondoAmarillo.png"
-                                                    class="rounded-circle" width="40">
-                                            </td>
-
-                                            <td class="align-middle">20 Ago, 2024</td>
-                                            <td class="align-middle">100€</td>
-
-                                            <td class="align-middle ps-5">
-                                                <span class="badge text-bg-secondary">En espera</span>
-                                            </td>
-
-                                            <td class="align-middle">
-                                                <a href="editarCompeticion.html" class="text-light"><i
-                                                        class="bi bi-pencil-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
                                             </td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Tabla usuarios -->
-                <div class="row">
-                    <!-- col -->
-                    <div class="col-12">
-                        <!-- card -->
-                        <div class="card">
-                            <!-- table -->
-                            <div class="table-responsive overflow-y-hidden">
-                                <table class="table mb-0 text-nowrap table-hover table-centered">
-                                    <thead class="">
+                                        <!-- Acient -->
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Correo Electrónico</th>
-                                            <!-- El rol del usuario en la plataforma, como administrador, organizador de torneos, jugador, etc. -->
-                                            <th>Rol</th>
-                                            <th>Fecha de Registro</th>
-                                            <th>Última Conexión</th>
-                                            <!-- Indica si la cuenta del usuario está activa, suspendida, o pendiente de activación. -->
-                                            <th>Estado Cuenta</th>
-                                            <th>Acciones</th>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoAcient.png" alt="logo Acient" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Acient</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">DarkNeko</td>
+
+                                            <td class="align-middle">1 Feb, 2024</td>
+
+                                            <td class="align-middle">8</td>
+
+                                            <td class="align-middle">13</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-success">Activo</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                                        <!-- Ursus -->
                                         <tr>
-                                            <td class="align-middle">
-                                                <p class="mb-0"><a href="#"
-                                                        class="text-light text-decoration-none fs-5">DaniTsu</a></p>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoUrsus.png" alt="logo Ursus" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Ursus</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </td>
 
-                                            <td class="align-middle">danicumplido04@gmail.com</td>
+                                            <td class="align-middle">Leinad</td>
 
-                                            <td class="align-middle">Administrador</td>
+                                            <td class="align-middle">04 Oct, 2023</td>
 
-                                            <td class="align-middle">23/01/2024</td>
+                                            <td class="align-middle">7</td>
 
-                                            <td class="align-middle">08/05/2024</td>
+                                            <td class="align-middle">42</td>
 
                                             <td class="align-middle">
-                                                <span class="badge text-bg-secondary">En espera</span>
+                                                <span class="badge text-bg-success">Activo</span>
                                             </td>
 
                                             <td class="align-middle">
-                                                <a href="editarCompeticion.html" class="text-light"><i
-                                                        class="bi bi-pencil-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Galaga -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoGalaga.png" alt="logo Galaga" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Galaga</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">samu08</td>
+
+                                            <td class="align-middle">30 Mar, 2024</td>
+
+                                            <td class="align-middle">5</td>
+
+                                            <td class="align-middle">7</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-warning">En revisión</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Serpes -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoSerpes.png" alt="logo Serpes" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Serpes</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">al3xmg</td>
+
+                                            <td class="align-middle">27 Abr, 2024</td>
+
+                                            <td class="align-middle">10</td>
+
+                                            <td class="align-middle">24</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-success">Activo</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- TheMain -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoTheMain.png" alt="logo TheMain" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">TheMain</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">JustPindu</td>
+
+                                            <td class="align-middle">31 Ene, 2024</td>
+
+                                            <td class="align-middle">5</td>
+
+                                            <td class="align-middle">10</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-secondary">Inactivo</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Efrag -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div
+                                                        class="rounded-3 border p-2 d-flex align-items-center bg-light">
+                                                        <img src="img/logoEfrag.png" alt="logo Efrag" width="40">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Efrag</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">KermitTheFrog</td>
+
+                                            <td class="align-middle">01 Ene, 2024</td>
+
+                                            <td class="align-middle">2</td>
+
+                                            <td class="align-middle">13</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-danger">Inhabilitado</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
