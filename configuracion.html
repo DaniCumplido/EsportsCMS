@@ -163,15 +163,15 @@
                     <div class="card-body p-lg-6">
                         <!-- Formulario -->
                         <form class="row gx-3 needs-validation" novalidate="">
+                            <!-- cambiar correo -->
                             <div class="col-12 col-xxl-4">
-                                <!-- Sección de información básica -->
                                 <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
-                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Seguridad</h1>
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Cambiar Correo</h1>
                                 </div>
-                                <!-- Campo para el nombre -->
+                                <!-- Campo para el cambio de correo -->
                                 <div class="mb-5 col-12">
-                                    <label class="form-label text-oro">
-                                        Cambiar correo
+                                    <label class="form-label">
+                                        Nuevo correo electrónico
                                     </label>
                                     <div class="input-group mb-3">
                                         <input type="email" class="form-control" placeholder="nombre@ejemplo.com"
@@ -180,7 +180,36 @@
                                             id="button-addon2">Guardar</button>
                                     </div>
                                 </div>
-                                <hr>
+                                <!-- cambiar contraseña -->
+                                <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Cambiar Contraseña</h1>
+                                </div>
+                                <!-- Campo para el cambio de correo -->
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">
+                                        Contraseña actual
+                                    </label>
+                                    <input type="password" class="form-control" placeholder="Contraseña actual"
+                                        aria-label="Contraseña actual" aria-describedby="button-addon2">
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">
+                                        Nuevo correo electrónico
+                                    </label>
+                                    <input type="password" class="form-control" placeholder="Nueva contraseña"
+                                        aria-label="Nueva contraseña" aria-describedby="button-addon2">
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">
+                                        Repetir nuevo correo electrónico
+                                    </label>
+                                    <input type="password" class="form-control" placeholder="Nueva contraseña"
+                                        aria-label="Nueva contraseña" aria-describedby="button-addon2">
+                                </div>
+                                <!-- Botones de envío y cierre -->
+                                <div class="col-12">
+                                    <button class="btn btn-oro" type="submit">Cambiar Contraseña</button>
+                                </div>
                             </div>
                             <div class="col-12 col-xxl-4">
                                 <!-- Sección de información del juego -->
@@ -280,82 +309,84 @@
                                     <div class="invalid-feedback">Please choose option.</div>
                                 </div>
                             </div>
+                            <!-- Notificaciones -->
                             <div class="col-12 col-xxl-4">
                                 <!-- Sección de registro -->
                                 <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
                                     <h1 class="fw-bold text-oro lh-1 titulo mb-0">Notificaciones</h1>
                                 </div>
-                                <!-- Campo para la cuota de inscripción -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">Cuota de inscripción
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <select class="form-select" id="cuotaInscripcion" required="">
-                                        <option value="">Selecciona una cuota</option>
-                                        <option value="Gratuita">Gratuita</option>
-                                        <option value="Pago">Pago</option>
-                                    </select>
-                                    <div class="invalid-feedback">Please choose option.</div>
-                                </div>
-                                <!-- Campo para el número mínimo de miembros por equipo -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">Precio de inscripción
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <input type="number" class="form-control" id="precioInscripcion"
-                                        placeholder="Introduce un número" rows="3" disabled>
-                                    <div class="invalid-feedback">Please choose option.</div>
-                                </div>
-                                <!-- Campo para la fecha de cierre de inscripciones -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">
-                                        Fecha de cierre de inscripciones
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group me-3">
-                                        <input class="form-control flatpickr flatpickr-input" type="text"
-                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon2"
-                                            readonly="readonly">
-
-                                        <span class="input-group-text" id="basic-addon2"><i
-                                                class="bi bi-calendar-event"></i></span>
+                                <div class="d-flex align-items-center justify-content-between mb-3 list-group-item">
+                                    <div class="text-blanco">Notificarme de las novedades en Eclipse
+                                        Tournaments</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesTodas" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
                                     </div>
                                 </div>
-                                <!-- Campo para la fecha de inicio -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">
-                                        Fecha de inicio
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group me-3">
-                                        <input class="form-control flatpickr flatpickr-input" type="text"
-                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon3"
-                                            readonly="readonly">
-
-                                        <span class="input-group-text" id="basic-addon3"><i
-                                                class="bi bi-calendar-event"></i></span>
+                                <label class="form-label text-oro">Gestión de Torneos</label>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Nuevas inscripciones en competiciones</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input">
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
                                     </div>
                                 </div>
-                                <!-- Campo para la fecha de finalización -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">
-                                        Fecha de fin
-                                        <span class="text-danger">*</span>
-                                    </label>
-                                    <div class="input-group me-3">
-                                        <input class="form-control flatpickr flatpickr-input" type="text"
-                                            placeholder="Selecciona una fecha" aria-describedby="basic-addon3"
-                                            readonly="readonly">
-
-                                        <span class="input-group-text" id="basic-addon3"><i
-                                                class="bi bi-calendar-event"></i></span>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Alertas sobre conflictos de programación de partidos</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Botones de envío y cierre -->
-                            <div class="col-12">
-                                <button class="btn btn-oro" type="submit">Crear</button>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Cambios en la configuración de las competiciones</div>
+                                    <div class="form-switch" checked>
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input">
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
+                                    </div>
+                                </div>
+                                <hr>
+                                <label class="form-label text-oro">Contenido</label>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Aprobación de publicaciones de noticias o actualizaciones
+                                    </div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Notificaciones de comentarios o mensajes recibidos en el
+                                        sitio</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
+                                    </div>
+                                </div>
+                                <hr>
+                                <label class="form-label text-oro">Notificaciones de Seguridad</label>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Alertas sobre intentos de acceso no autorizado</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-1 list-group-item">
+                                    <div class="text-blanco">Notificaciones de actualizaciones de seguridad del CMS</div>
+                                    <div class="form-switch">
+                                        <input id="notificacionesNovedades" name="radios" type="checkbox"
+                                            class="form-check-input" checked>
+                                        <!-- Comprobar en la bd si esta checked o no y ponerlo -->
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
