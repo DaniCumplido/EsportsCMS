@@ -11,13 +11,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
-
-    <!-- Librería Flatpickr para seleccionar fechas con selector en calendario -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Título de la página -->
-    <title>Crear Competiciones | Eclipse Tournaments' CMS</title>
+    <title>Configuración | Eclipse Tournaments' CMS</title>
 </head>
 
 <body>
@@ -44,7 +41,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="competiciones.html" class="nav-link  fw-bold active d-flex align-items-center">
+                        <a href="competiciones.html" class="nav-link link-body-emphasis">
                             <i class="fa-solid fa-trophy me-2 fs-5"></i>
                             Competiciones
                         </a>
@@ -68,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="notícias.html" class="nav-link link-body-emphasis">
+                        <a href="noticias.html" class="nav-link link-body-emphasis">
                             <i class="fa-solid fa-newspaper me-2 fs-5"></i>
                             Notícias
                         </a>
@@ -80,7 +77,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="Accesos.html" class="nav-link link-body-emphasis">
+                        <a href="accesos.html" class="nav-link link-body-emphasis">
                             <i class="fa-solid fa-address-card me-2 fs-5"></i>
                             Accesos
                         </a>
@@ -130,10 +127,11 @@
                                 <strong>Daniel Cumplido</strong>
                             </a>
                             <ul class="dropdown-menu text-small shadow">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Editar
-                                        perfil</a>
+                                <li><a class="dropdown-item" href="editarPerfil.html"><i
+                                            class="fa-solid fa-user me-2"></i>Mi
+                                        Perfil</a>
                                 </li>
-                                <li><a class="dropdown-item" href="#"><i
+                                <li><a class="dropdown-item" href="configuracion.html"><i
                                             class="fa-solid fa-gear me-2"></i>Configuración</a>
                                 </li>
                                 <li>
@@ -152,22 +150,14 @@
                 <!-- Título -->
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-12">
-                        <div class="border-bottom mb-4 d-lg-flex justify-content-between align-items-center">
+                        <div class="border-bottom pb-4 mb-4 d-lg-flex justify-content-between align-items-center">
                             <div class="mb-3 mb-lg-0">
-                                <h1 class="mb-0 h1 fw-bold">Crear competición</h1>
-                                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-                                    aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="competiciones.html">Competiciones</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Crear Competición</li>
-                                    </ol>
-                                </nav>
+                                <h1 class="mb-0 h1 fw-bold">Configuración</h1>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Tarjeta -->
+                <!-- Contenido -->
                 <div class="card">
                     <!-- Cuerpo de la tarjeta -->
                     <div class="card-body p-lg-6">
@@ -176,47 +166,26 @@
                             <div class="col-12 col-xxl-4">
                                 <!-- Sección de información básica -->
                                 <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
-                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Información</h1>
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Seguridad</h1>
                                 </div>
                                 <!-- Campo para el nombre -->
-                                <div class="mb-3 col-12">
+                                <div class="mb-5 col-12">
                                     <label class="form-label text-oro">
-                                        Nombre
-                                        <span class="text-danger">*</span>
+                                        Cambiar correo
                                     </label>
-                                    <input type="text" class="form-control" placeholder="Introduce un nombre"
-                                        required="">
-                                    <div class="invalid-feedback">Please enter first title.</div>
-                                </div>
-                                <!-- Campo para la descripción -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">Descripción</label>
-                                    <textarea class="form-control" placeholder="Introduce una breve descripción..."
-                                        rows="3" required=""></textarea>
-                                    <div class="invalid-feedback">Please enter messages.</div>
-                                </div>
-                                <!-- Campo para el logo -->
-                                <!-- <input type="file" class="filepond" name="filepond" multiple data-max-file-size="3MB" data-max-files="3" /> -->
-                                <div class="mb-3 col-12">
-                                    <div>
-                                        <label class="form-label text-oro">Logo</label>
-                                        <div class="input-group mb-3">
-                                            <input type="file" class="form-control" id="logoInput">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Campo para la portada -->
-                                <div class="mb-3 col-12">
-                                    <label class="form-label text-oro">Portada</label>
                                     <div class="input-group mb-3">
-                                        <input type="file" class="form-control" id="portadaInput">
+                                        <input type="email" class="form-control" placeholder="nombre@ejemplo.com"
+                                            aria-label="nombre@ejemplo.com" aria-describedby="button-addon2">
+                                        <button class="btn btn-oro-outline" type="button"
+                                            id="button-addon2">Guardar</button>
                                     </div>
                                 </div>
+                                <hr>
                             </div>
                             <div class="col-12 col-xxl-4">
                                 <!-- Sección de información del juego -->
                                 <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
-                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Formato</h1>
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Privacidad</h1>
                                 </div>
                                 <!-- Campo para seleccionar el juego -->
                                 <div class="mb-3 col-12">
@@ -314,7 +283,7 @@
                             <div class="col-12 col-xxl-4">
                                 <!-- Sección de registro -->
                                 <div class="border-bottom mb-4" data-aos="fade-up" data-bs-theme="dark">
-                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">inscripción</h1>
+                                    <h1 class="fw-bold text-oro lh-1 titulo mb-0">Notificaciones</h1>
                                 </div>
                                 <!-- Campo para la cuota de inscripción -->
                                 <div class="mb-3 col-12">
@@ -405,57 +374,78 @@
             });
         });
 
-        // Obtenemos los elementos relevantes del DOM
-        const radioUnaEtapa = document.getElementById('radioUnaEtapas');
-        const radioDosEtapas = document.getElementById('radioDosEtapas');
-        const selectSegundaEtapa = document.getElementById('segundaEtapa');
+        // Datos inventados para usuarios registrados por mes
+        const registeredUsersData = [100, 150, 220, 250, 280, 350, 420, 460, 500, 533, 600, 650];
+        // Datos inventados para usuarios que entran a la web por mes
+        const usersOnlineData = [50, 80, 100, 120, 100, 200, 220, 200, 280, 300, 310, 380];
 
-        // Agregamos event listeners para el cambio en los radios de una etapa y dos etapas
-        radioUnaEtapa.addEventListener('change', updateSegundaEtapa);
-        radioDosEtapas.addEventListener('change', updateSegundaEtapa);
-
-        // Función para actualizar el estado del campo de selección de segunda etapa
-        function updateSegundaEtapa() {
-            // Si se selecciona dos etapas, habilitar el campo de selección de segunda etapa
-            if (radioDosEtapas.checked) {
-                selectSegundaEtapa.disabled = false;
-            } else {
-                // Si no se selecciona dos etapas, deshabilitarlo
-                selectSegundaEtapa.disabled = true;
-            }
-        }
-
-        // Obtenemos el campo de selección de cuota de inscripción
-        const selectCuotaInscripcion = document.getElementById('cuotaInscripcion');
-        const selectPrecioInscripcion = document.getElementById('precioInscripcion');
-
-        // Agregamos un event listener al cambio en la selección de cuota de inscripción
-        selectCuotaInscripcion.addEventListener('change', function () {
-            // Si se selecciona pago, habilitar el campo de precio de inscripción
-            if (selectCuotaInscripcion.value === 'Pago') {
-                selectPrecioInscripcion.disabled = false;
-            } else {
-                // Si no se selecciona pago, deshabilitarlo
-                selectPrecioInscripcion.disabled = true;
+        // Configuración del gráfico
+        const ctx = document.getElementById('userChart').getContext('2d');
+        const userChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Registered Users',
+                    data: registeredUsersData,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }, {
+                    label: 'Users Online',
+                    data: usersOnlineData,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
             }
         });
 
-        // Llamamos a la función para asegurarnos de que el campo de selección de segunda etapa esté en el estado correcto al cargar la página
-        updateSegundaEtapa();
 
-        // Esperamos a que el documento esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function () {
-            // Configuramos Flatpickr para los campos de fecha
-            flatpickr('.flatpickr', {
-                // Opciones adicionales de configuración aquí
-                // Puedes personalizar el formato de fecha, el idioma, etc.
-                dateFormat: 'Y-m-d', // Formato de fecha YYYY-MM-DD
-                locale: 'es', // Idioma español
-                // Podemos añadir más opciones aquí según sea necesario
-            });
+        // Datos inventados para la distribución de inscripciones por tipo de torneo
+        const tournamentTypes = ['Torneos', 'Ligas', 'Showmatch'];
+        const registrationsDistribution = [60, 30, 10]; // Porcentajes de inscripciones para cada tipo de torneo
+
+        // Configuración del gráfico
+        const ctx2 = document.getElementById('registrationChart').getContext('2d');
+        const registrationChart = new Chart(ctx2, {
+            type: 'doughnut', // Cambio del tipo de gráfico a radial
+            data: {
+                labels: tournamentTypes,
+                datasets: [{
+                    label: 'Tournament Registrations',
+                    data: registrationsDistribution,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
     </script>
-
     <!-- Scripts -->
     <script src="https://kit.fontawesome.com/ca4ee4c5f8.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
