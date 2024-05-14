@@ -20,6 +20,7 @@ Usuarios:
 Patrocinadores:
 	Se puede interactuar con los "Patrocinadores y acceder a sus productos"
 	Se puede pulsar "+ añadir Patrocinador"
+	 -> Esto despliega un modal con mas información
 Noticias:
 	Se puede interactuar con "+ Crear Publicación"
 	 -> Redirige a "noticiasPublicacion" donde se puede interactuar con el "drag and drop" (¡Prueba a subir una imagen!)
