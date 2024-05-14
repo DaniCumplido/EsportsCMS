@@ -164,7 +164,7 @@
                             <div class="d-flex">
                                 <a class="btn btn-oro-outline" data-bs-toggle="modal"
                                     data-bs-target="#modalNivelesAcceso"><i class="fa-regular fa-circle-question"></i>
-                                    Niveles de acceso</a>
+                                    Niveles de accesso</a>
                             </div>
                         </div>
                     </div>
@@ -177,6 +177,11 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <h4 class="mb-0">Usuarios</h4>
+                                    </div>
+                                    <div class="d-flex">
+                                        <a class="btn btn-oro-outline" data-bs-toggle="modal"
+                                            data-bs-target="#modalAñadirUsuario"><i class="fa-solid fa-plus"></i> Añadir
+                                            Usuario</a>
                                     </div>
                                 </div>
                             </div>
@@ -439,6 +444,11 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <h4 class="mb-0">Organizaciones</h4>
+                                    </div>
+                                    <div class="d-flex">
+                                        <a class="btn btn-oro-outline" data-bs-toggle="modal"
+                                            data-bs-target="#modalAñadirOrganizacion"><i class="fa-solid fa-plus"></i>
+                                            Añadir Organización</a>
                                     </div>
                                 </div>
                             </div>
@@ -819,6 +829,92 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalAñadirUsuario" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Asignar Acceso</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3 col-12" role="search">
+                                    <label class="form-label">Usuario</label>
+                                    <input type="search" class="form-control" placeholder="Buscar..."
+                                        aria-label="Search">
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">Organización</label>
+                                    <select class="form-select" required="">
+                                        <option value="">Selecciona la organización</option>
+                                        <option value="Eclipse Tournaments">Eclipse Tournaments</option>
+                                        <option value="El Templo">El Templo</option>
+                                        <option value="Equizers">Equizers</option>
+                                        <option value="AruxGG">AruxGG</option>
+                                        <option value="Diamond Gaming Center">Diamond Gaming Center</option>
+                                        <option value="SLTitans Esports">SLTitans Esports</option>
+                                        <option value="UNICORP Esports">UNICORP Esports</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-oro">Asignar Acceso</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalAñadirOrganizacion" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-md">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir Organización</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">Nombre de la organización</label>
+                                    <input aria-describedby="button-addon2" class="form-control" placeholder="Nombre"
+                                        type="text">
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">Nivel de acceso</label>
+                                    <select class="form-select" required="">
+                                        <option value="">Selecciona el acceso</option>
+                                        <option value="Administrador">Administrador</option>
+                                        <option value="Soporte">Soporte</option>
+                                        <option value="Organizador">Organizador</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                                <div class="mb-3 col-12">
+                                    <label class="form-label">Estado</label>
+                                    <select class="form-select" required="">
+                                        <option value="">Selecciona el estado</option>
+                                        <option value="Activa">Activa</option>
+                                        <option value="En revisión">En revisión</option>
+                                        <option value="Inhabilitada">Inhabilitada</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please choose option.</div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-oro">Añadir Organización</button>
                             </div>
                         </div>
                     </div>
