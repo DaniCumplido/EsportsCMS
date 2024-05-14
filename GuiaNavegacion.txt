@@ -1,0 +1,34 @@
+Index:
+	Pulsar acceder y entras directamente al Dashboard
+Perfil:
+	Se puede acceder a "Editar Perfil"
+	Se puede acceder a "Configuración"
+	Se puede acceder a "Cerrar Sesion"
+Dashboard:
+	Se puede interactuar con las gráficas
+Calendario:
+	Se puede interactuar con todos los botones
+	Hay un superevento en el calendario, puedes arrastrar el evento a otras fechas
+Competiciones:	
+	Se puede pulsar "+ Crear competición"
+	Se puede pulsar en el boton de editar al final de la tabla
+	 -> Redirige a "editarCompetición" donde se puede interactuar con las gráficas
+Equipos:
+	Se puede interactuar con el filtro
+Usuarios:
+	Se puede interactuar con el filtro
+Patrocinadores:
+	Se puede interactuar con los "Patrocinadores y acceder a sus productos"
+	Se puede pulsar "+ añadir Patrocinador"
+Noticias:
+	Se puede interactuar con "+ Crear Publicación"
+	 -> Redirige a "noticiasPublicacion" donde se puede interactuar con el "drag and drop" (¡Prueba a subir una imagen!)
+Soporte:
+	Se puede interactuar con los filtros
+	Se puede pulsar encima de "Cambio de colores"
+	 -> Esto despliega un modal con mas información
+Accesos:
+	Se puede interactuar con los filtros
+	Se puede pulsar en "(?) Niveles de acceso"
+	Se puede pulsar en "+ Añadir Usuario" y "+ Añadir organizacion"
+	 ->Esto despliega un modal con mas información
