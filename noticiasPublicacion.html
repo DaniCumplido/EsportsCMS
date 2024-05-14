@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+    <!-- Metadatos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlaces a archivos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Título de la página -->
+    <title>Dashboard | Eclipse Tournaments' CMS</title>
+</head>
+
+<body>
+    <div id="db-wrapper">
+        <!-- Sidebar -->
+        <div class="navbar-vertical">
+            <div class="d-flex flex-column flex-shrink-0 p-3" style="height: 100%;">
+                <a href="/"
+                    class="d-flex align-items-center justify-content-center text-center mb-3 mb-md-0 link-body-emphasis text-decoration-none">
+                    <img src="img/textLogoDark.png" alt="logo eclipse torunaments" width="200">
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link fw-bold align-items-center">
+                            <i class="fa-solid fa-chart-line me-2 fs-5"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendaio.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-calendar-days me-2 fs-5"></i>
+                            Calendario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="competiciones.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-trophy me-2 fs-5"></i>
+                            Competiciones
+                        </a>
+                    </li>
+                    <li>
+                        <a href="equipos.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-house-flag me-2 fs-5"></i>
+                            Equipos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="usuarios.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-users me-2 fs-5"></i>
+                            Usuarios
+                        </a>
+                    </li>
+                    <li>
+                        <a href="patrocinadores.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-handshake me-2 fs-5"></i>
+                            Patrocinadores
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notícias.html" class="nav-link  active link-body-emphasis" aria-current="page">
+                            <i class="fa-solid fa-newspaper me-2 fs-5"></i>
+                            Notícias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="soporte.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-comments me-2 fs-5"></i>
+                            Soporte
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Accesos.html" class="nav-link link-body-emphasis">
+                            <i class="fa-solid fa-address-card me-2 fs-5"></i>
+                            Accesos
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <div class="card bg-azul shadow-none text-center mx-4 my-8">
+                        <div class="card-body py-6">
+                            <img src="img/security.svg" width="130" alt="">
+                            <div class="mt-4">
+                                <p class="text-light mb-3 fw-semibold">Acceso Restringido</p>
+                                <p class="text-light" style="font-size: 12px;">Recuerda que todo el contenido en esta
+                                    plataforma es confidencial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor principal -->
+        <div id="page-content">
+            <!-- Barra de navegación -->
+            <nav class="px-3 py-2 mb-3 border-bottom bg-azul-claro">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+                    <ul class="nav col-6 col-lg-auto mb-2 me-lg-3 justify-content-center mb-md-0">
+                        <a id="toggle-sidebar-btn" class="text-gris"><i
+                                class="fa-solid fa-bars fs-4 cursor-pointer"></i></a>
+                    </ul>
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-auto " role="search">
+                        <input type="search" class="form-control" placeholder="Buscar..." aria-label="Search">
+                    </form>
+
+                    <div class="text-end d-flex align-items-center">
+                        <label class="switch me-3">
+                            <input id="switch" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <div class="dropdown">
+                            <a href="#"
+                                class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="img/profile.svg" alt="" width="32" height="32"
+                                    class="rounded-circle me-2 border">
+                                <strong>Daniel Cumplido</strong>
+                            </a>
+                            <ul class="dropdown-menu text-small shadow">
+                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user me-2"></i>Editar
+                                        perfil</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#"><i
+                                            class="fa-solid fa-gear me-2"></i>Configuración</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="index.html"><i
+                                            class="fa-solid fa-door-open me-2"></i>Cerrar
+                                        sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Contenido -->
+            <div class="container-fluid px-4 py-3">
+                <!-- Título -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="border-bottom mb-4 d-lg-flex justify-content-between align-items-center">
+                            <div class="mb-3 mb-lg-0">
+                                <h1 class="mb-0 h1 fw-bold">Noticias</h1>
+                                <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                                    aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="noticias.html">Noticias</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Crear Publicacion</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8 col-md-12 col-12">
+                        <!-- Card -->
+                        <div class="card border-0 mb-4">
+                            <!-- Card header -->
+                            <div class="card-header">
+                                <h4 class="mb-0">Crear Publicación</h4>
+                            </div>
+                            <form class="needs-validation" novalidate="">
+                                <!-- Card body -->
+                                <div class="card-body">
+                                    <input type="radio" class="btn-check mb-1 mb-md-0" name="options" id="option1"
+                                        autocomplete="off">
+                                    <label class="btn btn-oro-outline" for="option1">
+                                        <i class="fe fe-image me-1"></i>
+                                        Foto
+                                    </label>
+
+                                    <!-- <button class="btn btn-oro-outline me-2" type="submit">Mandar Respuesta</button> -->
+                                    <!-- <button class="btn btn-oro" type="submit">Resolver ticket</button> -->
+
+                                    <input type="radio" class="btn-check mb-1 mb-md-0" name="options" id="option2"
+                                        autocomplete="off">
+                                    <label class="btn btn-oro-outline" for="option2">
+                                        <i class="fe fe-video me-1"></i>
+                                        Video
+                                    </label>
+                                    <input type="radio" class="btn-check mb-1 mb-md-0" name="options" id="option3"
+                                        autocomplete="off">
+                                    <label class="btn btn-oro-outline" for="option3">Citar</label>
+                                    <input type="radio" class="btn-check mb-1 mb-md-0" name="options" id="option4"
+                                        autocomplete="off">
+                                    <label class="btn btn-oro-outline" for="option4">
+                                        <i class="fe fe-link me-1"></i>
+                                        Enlace
+                                    </label>
+
+                                    <!-- Drag and drop zone -->
+                                    <div class="drag-image text-center border border-dashed border-primary" >
+                                        <h6>Arrastrar y soltar archivo aquí</h6>
+                                        <button class="btn btn-oro-outline">Buscar Archivos</button>
+                                        <input type="file" hidden>
+                                    </div>
+                                    
+                                    <!-- Add the "Upload" button -->
+                                    <div class="mt-4">
+                                        <!-- Form -->
+                                        <div class="row">
+                                            <!-- Date -->
+                                            <div class="mb-3 col-md-4">
+                                                <label for="selectDate" class="form-label">Fecha</label>
+                                                <input type="text" id="selectDate"
+                                                    class="form-control text-dark flatpickr flatpickr-input"
+                                                    placeholder="Selecciona Fecha" required="" readonly="readonly">
+                                                <div class="invalid-feedback">Introduce fecha válida.</div>
+                                            </div>
+                                            <div class="mb-3 col-md-9">
+                                                <!-- Title -->
+                                                <label for="postTitle" class="form-label">Titulo</label>
+                                                <input type="text" id="postTitle" class="form-control text-dark"
+                                                    placeholder="Titulo" required="">
+                                                <small>Los titulos deben tener menos de 60 carácteres. Escribe un titular que describa el tema del contenido. Contextualiza para nuestro público.</small>
+                                                <div class="invalid-feedback">Introduce un título.</div>
+                                            </div>
+                                            <!-- Slug -->
+                                            <div class="mb-3 col-md-9">
+                                                <label for="basic-url" class="form-label">Slug</label>
+                                                <div class="input-group mb-1">
+                                                    <span class="input-group-text"
+                                                        id="basic-addon3">https://eclipse-tournaments.web.app/</span>
+                                                    <input type="text" class="form-control" id="basic-url"
+                                                        aria-describedby="basic-addon3" placeholder="Noticia-relacionada">
+                                                </div>
+                                                <small>El campo debe contener un valor único</small>
+                                            </div>
+                                            <!-- Extracto -->
+                                            <div class="mb-3 col-md-9">
+                                                <label for="Excerpt" class="form-label">Extracto</label>
+                                                <textarea rows="3" id="Excerpt" class="form-control text-dark"
+                                                    placeholder="Extracto"></textarea>
+                                                <small>Un pequeño extracto de la escritura.</small>
+                                            </div>
+                                            <!-- Categoria -->
+                                            <div class="mb-3 col-md-9">
+                                                <label class="form-label" for="category">Categoría</label>
+                                                <select class="form-select" id="category" required="">
+                                                    <option value="">Evento</option>
+                                                    <option value="Post Category">Noticia Evento</option>
+                                                    <option value="Workshop">Redes Sociales</option>
+                                                    <option value="Marketing">Marketing</option>
+                                                </select>
+                                                <div class="invalid-feedback">Please choose category.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Editor -->
+                                    <div class="mt-2 mb-4">
+                                    </div>
+                                    <!-- button -->
+                                    <button type="submit" class="btn btn-oro">Publicar</button>
+                                    <button type="submit" class="btn btn-oro-outline">Guardar como borrador</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-12 col-12">
+                        <!-- Card -->
+                        <div class="card mt-4 mt-lg-0 mb-4">
+                            <!-- Card Header -->
+                            <div class="card-header d-lg-flex">
+                                <h4 class="mb-0">Post Info</h4>
+                            </div>
+                            <!-- List Group -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <span class="text-oro">Post ID</span>
+                                    <h5>8693637308</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Estado</span>
+                                    <h5>
+                                        <span class="badge-dot bg-success d-inline-block me-1"></span>
+                                        Publicados (cambios sin guardar)
+                                    </h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Creado por</span>
+                                    <div class="d-flex mt-2">
+                                        <img src="../../assets/images/avatar/avatar-1.jpg" alt=""
+                                            class="avatar-sm rounded-circle">
+                                        <div class="ms-2">
+                                            <h5 class="mb-n1">DaniTsu</h5>
+                                            <small>Admin</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Día de creación</span>
+                                    <h5>May 16, 14:21</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Día de publicación</span>
+                                    <h5>May 16, 14:21</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Última actualización</span>
+                                    <h5>May 16, 14:21</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <span class="text-oro">Última publicación</span>
+                                    <h5>May 16, 14:21</h5>
+                                </li>
+                            </ul>
+                            <!-- Card -->
+                        </div>
+                        <div class="card mb-4">
+                            <!-- Card Header -->
+                            <div class="card-header d-lg-flex">
+                                <h4 class="mb-0">Acciones</h4>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="text-oro">Ocultar</span>
+                                    <a href="#" class="text-inherit"><i class="fe fe-x-circle fs-4"></i></a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="text-oro">Duplicar</span>
+                                    <a href="#" class="text-inherit"><i class="fe fe-copy fs-4"></i></a>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span class="text-oro">Borrar</span>
+                                    <a href="#"><i class="fe fe-trash text-danger fs-4"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Card  -->
+                        <div class="card">
+                            <!-- Card header -->
+                            <div class="card-header d-lg-flex">
+                                <h4 class="mb-0">Historial de revisiones</h4>
+                            </div>
+                            <!-- List group -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-0">May 16, 14:21</h5>
+                                        <span class="text-oro">DaniTsu</span>
+                                    </div>
+                                    <div>
+                                        <span class="badge bg-success badge-pill">Publicado</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var toggleBtn = document.getElementById('toggle-sidebar-btn');
+            var dbWrapper = document.getElementById('db-wrapper');
+
+            toggleBtn.addEventListener('click', function () {
+                dbWrapper.classList.toggle('toggled');
+            });
+        });
+
+        // Datos inventados para usuarios registrados por mes
+        const registeredUsersData = [100, 150, 220, 250, 280, 350, 420, 460, 500, 533, 600, 650];
+        // Datos inventados para usuarios que entran a la web por mes
+        const usersOnlineData = [50, 80, 100, 120, 100, 200, 220, 200, 280, 300, 310, 380];
+
+        // Configuración del gráfico
+        const ctx = document.getElementById('userChart').getContext('2d');
+        const userChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Registered Users',
+                    data: registeredUsersData,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }, {
+                    label: 'Users Online',
+                    data: usersOnlineData,
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+
+        // Datos inventados para la distribución de inscripciones por tipo de torneo
+        const tournamentTypes = ['Torneos', 'Ligas', 'Showmatch'];
+        const registrationsDistribution = [60, 30, 10]; // Porcentajes de inscripciones para cada tipo de torneo
+
+        // Configuración del gráfico
+        const ctx2 = document.getElementById('registrationChart').getContext('2d');
+        const registrationChart = new Chart(ctx2, {
+            type: 'doughnut', // Cambio del tipo de gráfico a radial
+            data: {
+                labels: tournamentTypes,
+                datasets: [{
+                    label: 'Tournament Registrations',
+                    data: registrationsDistribution,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/ca4ee4c5f8.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <script src="js/darkMode.js"></script>
+    <script src="js/dragDrop.js"></script>
+</body>
+
+</html>
