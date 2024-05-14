@@ -10,7 +10,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
+
+    <!-- Favicons -->
+    <link rel="shotcut icon" href="img/iconLogoLight.png" id="favicon-light" media="(prefers-color-scheme: light)">
+    <link rel="shotcut icon" href="img/iconLogoDark.png" id="favicon-dark" media="(prefers-color-scheme: dark)">
+    <script>
+        function updateFavicon() {
+            const faviconLight = document.getElementById('favicon-light');
+            const faviconDark = document.getElementById('favicon-dark');
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                faviconLight.remove();
+                document.head.appendChild(faviconDark);
+            } else {
+                faviconDark.remove();
+                document.head.appendChild(faviconLight);
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+        // Llama a la función para establecer el favicon correcto al cargar la página
+        updateFavicon();
+    </script>
 
     <!-- Título de la página -->
     <title>Acceso | CMS - Eclipse Tournaments</title>
@@ -52,9 +74,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-xl-5 ms-xl-auto px-lg-4 text-center text-oro">
-                    <img class="img-fluid mb-4" width="300"
-                        src="img/cms.svg"
-                        alt="Ilustración CMS Eclipse Tournaments">
+                    <img class="img-fluid mb-4" width="300" src="img/cms.svg" alt="Ilustración CMS Eclipse Tournaments">
                     <h1 class="mb-4 titulo">Acceso restringido al CMS de Eclipse Tournaments</h1>
                     <p class="lead text-muted">Nuestra plataforma permite gestionar competiciones, equipos, usuarios,
                         noticias y patrocinadores de manera centralizada, ofreciendo un control completo sobre el
