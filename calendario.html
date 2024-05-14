@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/click-spark-main/click-spark.js"></script>
     <script type='importmap'>
         {
           "imports": {
@@ -23,13 +24,37 @@
             "@fullcalendar/list": "https://cdn.skypack.dev/@fullcalendar/list@6.1.11"
           }
         }
-        </script>
-        
+    </script>
+
+    <!-- Favicons -->
+    <link rel="shotcut icon" href="img/iconLogoLight.png" id="favicon-light" media="(prefers-color-scheme: light)">
+    <link rel="shotcut icon" href="img/iconLogoDark.png" id="favicon-dark" media="(prefers-color-scheme: dark)">
+    <script>
+        function updateFavicon() {
+            const faviconLight = document.getElementById('favicon-light');
+            const faviconDark = document.getElementById('favicon-dark');
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                faviconLight.remove();
+                document.head.appendChild(faviconDark);
+            } else {
+                faviconDark.remove();
+                document.head.appendChild(faviconLight);
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+        // Llama a la función para establecer el favicon correcto al cargar la página
+        updateFavicon();
+    </script>
+
     <!-- Título de la página -->
     <title>Competiciones | Eclipse Tournaments' CMS</title>
 </head>
 
 <body>
+    <click-spark style="--click-spark-color: #FFB94A; z-index: 99 !important;"></click-spark>
     <div id="db-wrapper">
         <!-- Sidebar -->
         <div class="navbar-vertical">
@@ -47,7 +72,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="calendario.html" class="nav-link  fw-bold active d-flex align-items-center" aria-current="page">
+                        <a href="calendario.html" class="nav-link  fw-bold active d-flex align-items-center"
+                            aria-current="page">
                             <i class="fa-solid fa-calendar-days me-2 fs-5"></i>
                             Calendario
                         </a>
@@ -139,7 +165,8 @@
                                 <strong>Daniel Cumplido</strong>
                             </a>
                             <ul class="dropdown-menu text-small shadow">
-                                <li><a class="dropdown-item" href="editarPerfil.html"><i class="fa-solid fa-user me-2"></i>Editar
+                                <li><a class="dropdown-item" href="editarPerfil.html"><i
+                                            class="fa-solid fa-user me-2"></i>Editar
                                         perfil</a>
                                 </li>
                                 <li><a class="dropdown-item" href="configuracion.html"><i
@@ -182,7 +209,7 @@
                         <div class="card">
                             <!-- Calendar -->
                             <div id="calendar" class="fc fc-media-screen fc-direction-ltr fc-theme-standard"
-                            style="height: 900px; width: 100%;">
+                                style="height: 900px; width: 100%;">
 
                             </div>
                             </td>
@@ -221,43 +248,43 @@
     <script src="js/darkMode.js"></script>
     <!-- <script type="module" src="js/calendar.js"></script> -->
     <script type='module'>
-    import { Calendar } from '@fullcalendar/core';
-    import dayGridPlugin from '@fullcalendar/daygrid';
-    import timeGridPlugin from '@fullcalendar/timegrid';
-    import interactionPlugin from '@fullcalendar/interaction';
-    import listPlugin from '@fullcalendar/list'; // Importar el plugin de lista
+        import { Calendar } from '@fullcalendar/core';
+        import dayGridPlugin from '@fullcalendar/daygrid';
+        import timeGridPlugin from '@fullcalendar/timegrid';
+        import interactionPlugin from '@fullcalendar/interaction';
+        import listPlugin from '@fullcalendar/list'; // Importar el plugin de lista
         const eventos = [
-    { title: 'Desafío Eclipse: Segunda División', start: '2024-08-20', end: '2024-09-30', color: '#007BFF', estado: 'En espera' }, // Azul para "En espera"
-    { title: 'Desafío Eclipse: Primera División', start: '2024-04-04', end: '2024-05-24', color: '#FFC107', estado: 'En Progreso' }, // Amarillo para "En Progreso"
-    { title: 'Titans Showdown', start: '2024-01-04', end: '2024-01-24', color: '#28A745', estado: 'Finalizado' }, // Verde para "Finalizado"
-    { title: 'Eclipse Showtime', start: '2024-01-31', end: '2024-01-31', color: '#DC3545', estado: 'Cancelado' }, // Rojo para "Cancelado"
-    { title: 'Arux Tournament', start: '2024-03-13', end: '2024-03-13', color: '#FFC107', estado: 'En progreso' }, // Amarillo para "En Progreso"
-    { title: 'Diamond Showmatch', start: '2024-02-09', end: '2024-02-09', color: '#28A745', estado: 'Finalizado' } // Verde para "Finalizado"
-];
+            { title: 'Desafío Eclipse: Segunda División', start: '2024-08-20', end: '2024-09-30', color: '#007BFF', estado: 'En espera' }, // Azul para "En espera"
+            { title: 'Desafío Eclipse: Primera División', start: '2024-04-04', end: '2024-05-24', color: '#FFC107', estado: 'En Progreso' }, // Amarillo para "En Progreso"
+            { title: 'Titans Showdown', start: '2024-01-04', end: '2024-01-24', color: '#28A745', estado: 'Finalizado' }, // Verde para "Finalizado"
+            { title: 'Eclipse Showtime', start: '2024-01-31', end: '2024-01-31', color: '#DC3545', estado: 'Cancelado' }, // Rojo para "Cancelado"
+            { title: 'Arux Tournament', start: '2024-03-13', end: '2024-03-13', color: '#FFC107', estado: 'En progreso' }, // Amarillo para "En Progreso"
+            { title: 'Diamond Showmatch', start: '2024-02-09', end: '2024-02-09', color: '#28A745', estado: 'Finalizado' } // Verde para "Finalizado"
+        ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    const calendarEl = document.getElementById('calendar');
-    const calendar = new Calendar(calendarEl, {
-      plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
-      initialView: 'dayGridMonth',
-      headerToolbar: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth' // Agrega 'timeGridWeek', 'listMonth'
-      },
-      editable: true,
-      selectable: true,
-      events: eventos,
-      eventClick: function(info) {
-        alert('Evento: ' + info.event.title);
-      },
-      select: function(info) {
-        alert('Seleccionado desde ' + info.startStr + ' hasta ' + info.endStr);
-      }
-    });
-    calendar.render();
-  });
-</script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new Calendar(calendarEl, {
+                plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth' // Agrega 'timeGridWeek', 'listMonth'
+                },
+                editable: true,
+                selectable: true,
+                events: eventos,
+                eventClick: function (info) {
+                    alert('Evento: ' + info.event.title);
+                },
+                select: function (info) {
+                    alert('Seleccionado desde ' + info.startStr + ' hasta ' + info.endStr);
+                }
+            });
+            calendar.render();
+        });
+    </script>
 
     <script src="js/index.global.min.js"></script>
 </body>

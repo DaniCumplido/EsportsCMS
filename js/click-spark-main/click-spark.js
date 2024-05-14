@@ -69,6 +69,7 @@ class ClickSpark extends HTMLElement {
           position: absolute;
           rotate: -20deg;
           stroke: var(--click-spark-color, currentcolor);
+          z-index: 99;
         }
 
         line {

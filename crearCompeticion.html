@@ -11,16 +11,41 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
+    <script src="js/click-spark-main/click-spark.js"></script>
 
     <!-- Librería Flatpickr para seleccionar fechas con selector en calendario -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Favicons -->
+    <link rel="shotcut icon" href="img/iconLogoLight.png" id="favicon-light" media="(prefers-color-scheme: light)">
+    <link rel="shotcut icon" href="img/iconLogoDark.png" id="favicon-dark" media="(prefers-color-scheme: dark)">
+    <script>
+        function updateFavicon() {
+            const faviconLight = document.getElementById('favicon-light');
+            const faviconDark = document.getElementById('favicon-dark');
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                faviconLight.remove();
+                document.head.appendChild(faviconDark);
+            } else {
+                faviconDark.remove();
+                document.head.appendChild(faviconLight);
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+
+        // Llama a la función para establecer el favicon correcto al cargar la página
+        updateFavicon();
+    </script>
 
     <!-- Título de la página -->
     <title>Crear Competiciones | Eclipse Tournaments' CMS</title>
 </head>
 
 <body>
+    <click-spark style="--click-spark-color: #FFB94A; z-index: 99 !important;"></click-spark>
     <div id="db-wrapper">
         <!-- Sidebar -->
         <div class="navbar-vertical">
