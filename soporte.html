@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="shortcut icon" href="img/Icon-Logo-Transparent-1.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+
 
     <!-- Título de la página -->
     <title>Soporte | Eclipse Tournaments' CMS</title>
@@ -66,13 +66,14 @@
                         </a>
                     </li>
                     <li>
-                        <a href="notícias.html" class="nav-link link-body-emphasis">
+                        <a href="noticias.html" class="nav-link link-body-emphasis">
                             <i class="fa-solid fa-newspaper me-2 fs-5"></i>
                             Notícias
                         </a>
                     </li>
                     <li>
-                        <a href="soporte.html" class="nav-link  fw-bold active d-flex align-items-center" aria-current="page">
+                        <a href="soporte.html" class="nav-link  fw-bold active d-flex align-items-center"
+                            aria-current="page">
                             <i class="fa-solid fa-comments me-2 fs-5"></i>
                             Soporte
                         </a>
@@ -162,10 +163,10 @@
                                 </nav>
                             </div>
                             <div class="d-flex">
-                                <a href="crearCompeticion.html" class="btn btn-oro-outline"><i
+                                <!-- <a href="crearCompeticion.html" class="btn btn-oro-outline"><i
                                         class="fa-solid fa-plus"></i>
                                     Crear
-                                    Competición</a>
+                                    Competición</a> -->
                             </div>
                         </div>
                     </div>
@@ -237,11 +238,13 @@
                                                         <i class="fa-solid fa-lightbulb"></i>
                                                     </div>
                                                     <div class="ms-3">
-                                                        <p class="mb-0"><a href="#"
-                                                                class="text-light text-decoration-none fs-5" onclick="showLiveToast()">Cambio de
-                                                                colores</a></p>
+                                                        <a href="#" class="text-light text-decoration-none fs-5"
+                                                            data-bs-toggle="modal" data-bs-target="#modalNivelesAcceso">
+                                                            Cambio de colores
+                                                        </a>
                                                     </div>
-                                                </div>                                                
+
+                                                </div>
 
                                             </td>
                                             <td class="align-middle">20 Abril, 2024</td>
@@ -442,8 +445,78 @@
             </div>
             <div class="toast-body">
                 <p>Please contact an administrator to <b>unlock</b> your system or contact the technical department</p>
-          <p><i class="bi bi-headset"></i> <b>ext 666</b> / <b>terminal number:</b> 00345</p>
-          <p><i class="bi bi-exclamation-square"></i> <b>alert code: </b> / 07-566</p>
+                <p><i class="bi bi-headset"></i> <b>ext 666</b> / <b>terminal number:</b> 00345</p>
+                <p><i class="bi bi-exclamation-square"></i> <b>alert code: </b> / 07-566</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalNivelesAcceso" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ticket</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- table -->
+                    <div class="table-responsive overflow-y-hidden">
+                        <table class="table mb-0 text-nowrap table-hover table-centered">
+                            <thead class="">
+                                <tr>
+                                    <th>Tipo</th>
+
+
+                                    <td class="align-middle">Sugerencia</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Mail -->
+                                <tr>
+                                    <th>Mail de contacto</th>
+
+
+
+                                    <td class="align-middle">usuarioEjemplo@gmail.com</td>
+                                </tr>
+                                <!-- Fecha -->
+                                <tr>
+                                    <th>Fecha</th>
+
+
+
+                                    <td class="align-middle">20 Abril, 2024</td>
+                                </tr>
+                                <!-- Titulo -->
+                                <tr>
+                                    <th>Titulo</th>
+
+
+
+                                    <td class="align-middle">Cambio de colores</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <section class="modal-container-body rtf">
+                        <h2>Cambio de colores</h2>
+
+                        <p>Los colores de vuestra pagina son demasiado llamativos, sugiero que los cambieis a tonos mas
+                            suaves o colores pastel y lorem ipsum dolor sit amet, consectetur adipiscing elit. Unum
+                            nescio, quo modo possit, si luxuriosus sit, finitas cupiditates habere. Hoc est non modo cor
+                            non habere, sed ne palatum quidem. Sic, et quidem diligentius saepiusque ista loquemur inter
+                            nos agemusque communiter. Paulum, cum regem Persem captum adduceret, eodem flumine invectio?
+                            Quid igitur dubitamus in tota eius natura quaerere quid sit effectum? Duo Reges: constructio
+                            interrete. </p>
+                    </section>
+                    <footer class="modal-container-footer d-flex justify-content-end">
+                        <button class="btn btn-oro-outline me-2" type="submit">Mandar Respuesta</button>
+                        <button class="btn btn-oro" type="submit">Resolver ticket</button>
+                        
+                    </footer>
+                    
+                </div>
             </div>
         </div>
     </div>
