@@ -156,177 +156,271 @@
                     </div>
                 </div>
                 <!-- Estadisticas -->
+
+                <!-- Estados disponibles  -->
+                <!-- <span class="badge text-bg-success">Publicado</span> -->
+                <!-- <span class="badge text-bg-secondary">Borrador</span> -->
+                <!-- <span class="badge text-bg-warning">Programado</span> -->
+                <!-- <span class="badge text-bg-danger">Descartado</span> -->
+                <!-- Tabla equipos -->
                 <div class="row">
-                    <!-- Usuarios -->
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                        <div class="card mb-4">
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3 lh-1">
-                                    <div>
-                                        <span class="fs-6 text-uppercase fw-semibold ls-md">Usuarios</span>
-                                    </div>
-                                    <div>
-                                        <span class="fa-solid fa-users fs-5 text-oro"></span>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bold mb-1">1204</h2>
-                                <span class="text-success fw-semibold">
-                                    +204
-                                </span>
-                                <span class="ms-1 fw-medium">Usuarios registrados</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Equipos -->
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                        <div class="card mb-4">
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3 lh-1">
-                                    <div>
-                                        <span class="fs-6 text-uppercase fw-semibold ls-md">Equipos</span>
-                                    </div>
-                                    <div>
-                                        <span class="fa-solid fa-house-flag fs-5 text-oro"></span>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bold mb-1">346</h2>
-                                <span class="text-success fw-semibold">
-                                    +36
-                                </span>
-                                <span class="ms-1 fw-medium">Equipos creados</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Competiciones -->
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                        <div class="card mb-4">
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3 lh-1">
-                                    <div>
-                                        <span class="fs-6 text-uppercase fw-semibold ls-md">Competiciones</span>
-                                    </div>
-                                    <div>
-                                        <i class="fa-solid fa-trophy fs-5 text-oro"></i>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bold mb-1">21</h2>
-                                <span class="text-danger fw-semibold">
-                                    -3
-                                </span>
-                                <span class="ms-1 fw-medium">Competiciones creadas</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Partidos -->
-                    <div class="col-xl-3 col-lg-6 col-md-12 col-12">
-                        <div class="card mb-4">
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <div class="d-flex align-items-center justify-content-between mb-3 lh-1">
-                                    <div>
-                                        <span class="fs-6 text-uppercase fw-semibold ls-md">Partidos</span>
-                                    </div>
-                                    <div>
-                                        <span class="fa-solid fa-medal fs-5 text-oro"></span>
-                                    </div>
-                                </div>
-                                <h2 class="fw-bold mb-1">203</h2>
-                                <span class="text-success fw-semibold">
-                                    +21
-                                </span>
-                                <span class="ms-1 fw-medium">Partidos jugados</span>
+                    <!-- col -->
+                    <div class="col-12">
+                        <!-- card -->
+                        <div class="card">
+                            <!-- table -->
+                            <div class="table-responsive overflow-y-hidden">
+                                <table class="table mb-0 text-nowrap table-hover table-centered">
+                                    <thead class="">
+                                        <tr>
+                                            <th>Publicación</th>
+                                            <th>Creado Por</th>
+                                            <th>Fecha de publicacion</th>
+                                            <th>Visitas</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Discord -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/discordImagen.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">¡Visita nuestro Discord!</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">DaniTsu</td>
+
+                                            <td class="align-middle">20 Feb, 2024</td>
+
+                                            <td class="align-middle">1.513</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-success">Activo</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Acient -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/sweetVictory.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Torneo League Of Legends Amateur</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">DaniTsu</td>
+
+                                            <td class="align-middle">1 Feb, 2024</td>
+
+                                            <td class="align-middle">0</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-danger">Descartado</span>
+                                            </td>
+                
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Ursus -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/gameChangers.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Game Changers!</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">Bulletox</td>
+
+                                            <td class="align-middle">20 May, 2024</td>
+
+                                            <td class="align-middle">0</td>
+
+                                            <td class="align-middle">
+                                                                <span class="badge text-bg-warning">Programado</span>
+                                            </td>
+
+                                                                        
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Galaga -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/twitchImagen.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Ahora en Twitch</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">Caldito</td>
+
+                                            <td class="align-middle">30 Mar, 2024</td>
+
+                                            <td class="align-middle">736</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-success">Publicado</span>
+                                            </td>                                            
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- Serpes -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/matsuri.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Matsuri te da la bienvenida</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">Oborko</td>
+
+                                            <td class="align-middle">27 May, 2024</td>
+
+                                            <td class="align-middle">0</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-warning">Programado</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- TheMain -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div style="background-color: aliceblue;" class="rounded">
+                                                        <img src="img/matsuri.png" alt=""width="150" class=" rounded">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <p class="mb-0"><a href="#"
+                                                                class="text-light text-decoration-none fs-5">Matsuri lista de participantes</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </td>
+
+                                            <td class="align-middle">Oborko</td>
+
+                                            <td class="align-middle">30 May, 2024</td>
+
+                                            <td class="align-middle">0</td>
+
+                                            <td class="align-middle">
+                                                <span class="badge text-bg-warning">Programado</span>
+                                            </td>
+
+                                            <td class="align-middle">
+                                                <a href="#!" class="text-light me-2" title="Actualizar información"><i
+                                                        class="fa-regular fa-pen-to-square fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Marcar en revisión"><i
+                                                        class="fa-solid fa-triangle-exclamation fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Inhabilitar"><i
+                                                        class="fa-regular fa-circle-stop fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Borrar"><i
+                                                        class="fa-regular fa-circle-xmark fs-5"></i></a>
+                                                <a href="#!" class="text-light me-2" title="Contactar"><i
+                                                        class="fa-regular fa-comments fs-5"></i></a>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Gráficos -->
-                <div class="row">
-                    <!-- Usuarios por mes -->
-                    <div class="col-xl-8 col-lg-12 col-md-12 col-12">
-                        <!-- Card -->
-                        <div class="card mb-4">
-                            <!-- Card header -->
-                            <div
-                                class="card-header align-items-center card-header-height d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4 class="mb-0">Usuarios</h4>
-                                </div>
-                                <div>
-                                    <div class="dropdown dropstart">
-                                        <a class="btn-icon btn btn-ghost btn-sm rounded-circle" href="#" role="button"
-                                            id="courseDropdown1" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="courseDropdown1">
-                                            <span class="dropdown-header">Settings</span>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-external-link dropdown-item-icon"></i>
-                                                Export
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-mail dropdown-item-icon"></i>
-                                                Email Report
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-download dropdown-item-icon"></i>
-                                                Download
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <!-- Chart -->
-                                <canvas id="userChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Otro -->
-                    <div class="col-xl-4 col-lg-12 col-md-12 col-12">
-                        <!-- Card -->
-                        <div class="card mb-4">
-                            <!-- Card header -->
-                            <div
-                                class="card-header align-items-center card-header-height d-flex justify-content-between align-items-center">
-                                <div>
-                                    <h4 class="mb-0">Inscripciones</h4>
-                                </div>
-                                <div>
-                                    <div class="dropdown dropstart">
-                                        <a class="btn-icon btn btn-ghost btn-sm rounded-circle" href="#" role="button"
-                                            id="courseDropdown2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical"></i>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="courseDropdown2">
-                                            <span class="dropdown-header">Settings</span>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-external-link dropdown-item-icon"></i>
-                                                Export
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-mail dropdown-item-icon"></i>
-                                                Email Report
-                                            </a>
-                                            <a class="dropdown-item" href="#">
-                                                <i class="fe fe-download dropdown-item-icon"></i>
-                                                Download
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <!-- Chart -->
-                                <canvas id="registrationChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
